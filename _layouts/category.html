@@ -1,0 +1,7 @@
+---
+layout: default
+---
+<h1 class="list-title">{{ site.data.categories[page.category_key] }}</h1>
+<div class="list">
+{% for p in site.categories[page.category_key] %}{% include post-item.html post=p big=forloop.first %}{% endfor %}
+</div>

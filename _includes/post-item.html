@@ -1,0 +1,11 @@
+{% assign p = include.post %}{% assign ck = p.categories | first %}
+<article class="item{% if include.big %} big{% endif %}">
+  <a href="{{ p.url | relative_url }}">
+    {% if p.image %}<img class="thumb" src="{{ p.image | relative_url }}" alt="{{ p.image_alt | default: p.title }}" loading="lazy">{% else %}<div class="thumb empty"></div>{% endif %}
+    <div class="meta-wrap">
+      <div class="meta">{{ site.data.categories[ck] | default: ck }} · {{ p.date | date: "%m.%d" }}</div>
+      <h2 class="item-title">{{ p.title }}</h2>
+      {% if include.big and p.description %}<p class="item-desc">{{ p.description }}</p>{% endif %}
+    </div>
+  </a>
+</article>

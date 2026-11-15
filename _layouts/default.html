@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2F4A7A">
+{% seo %}
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="logo" href="{{ '/' | relative_url }}"><img src="{{ site.logo | relative_url }}" alt="토크모스토어 블로그" width="218" height="40"></a>
+    <a class="shop-btn" href="{{ site.shop_url }}">쇼핑몰</a>
+  </div>
+  <nav class="wrap cat-nav" aria-label="카테고리">
+    <a href="{{ '/' | relative_url }}" class="chip{% if page.url == '/' or page.url contains '/page/' %} on{% endif %}">전체</a>
+    {% for c in site.data.categories %}{% if site.categories[c[0]] %}
+    <a href="{{ '/' | append: c[0] | append: '/' | relative_url }}" class="chip{% if page.category_key == c[0] or page.categories contains c[0] %} on{% endif %}">{{ c[1] }}</a>
+    {% endif %}{% endfor %}
+  </nav>
+</header>
+<main class="wrap">
+{{ content }}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>작지만 의미 있는 하나, 토크모스토어</p>
+    <p><a href="{{ site.shop_url }}">tokumostore.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
