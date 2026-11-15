@@ -28,6 +28,9 @@
   --r-card:18px;       /* 상품 카드·인용 상자 */
   --r-thumb:16px;      /* 목록 작은 사진 */
 
+  /* 목록 작은 사진 크기: 대표 사진과 같은 16:10 (잘리지 않게) */
+  --thumb-w:112px;  --thumb-h:70px;
+
   /* 기본 색 */
   --ink:#3A4560;       /* 글자 */
   --sub:#7C8396;       /* 흐린 글자 */
@@ -37,7 +40,7 @@
 
   /* 파스텔 색 (바탕색 / 그 위 글자색) */
   --lav:#E7E0F7;                         /* 맨 위·맨 아래 띠 */
-  --pink:#FBD6E1;   --pink-ink:#D86A8C;  /* 쇼핑몰 링크·구매 버튼·인용 상자·카테고리 글씨 */
+  --pink:#FBD6E1;   --pink-ink:#D86A8C;  /* 쇼핑몰 링크·구경하기 버튼·인용 상자·카테고리 글씨 */
   --mint:#D8F1E6;   --mint-ink:#2F7A5C;  /* 스마트스토어 링크 */
   --yellow:#FFF0BF; --yellow-ink:#9A6B12;/* 인스타그램 링크·소제목 밑줄 */
   --blue:#D6E6F7;   --blue-ink:#3F5F92;  /* 선택된 카테고리·쇼핑몰 가기 버튼 */
@@ -76,7 +79,7 @@ main{padding-top:8px;padding-bottom:40px}
 .list-title{font-size:22px;margin:18px 0 4px}
 .item{border-bottom:1px solid var(--line)}
 .item a{display:flex;gap:14px;padding:16px 0;align-items:center}
-.item .thumb{width:84px;height:84px;object-fit:cover;border-radius:var(--r-thumb);flex:none;background:var(--peach)}
+.item .thumb{width:var(--thumb-w);height:var(--thumb-h);object-fit:cover;border-radius:var(--r-thumb);flex:none;background:var(--peach)}
 .item.big a{display:block}
 .item.big .thumb{width:100%;height:auto;aspect-ratio:16/10;margin-bottom:12px;border-radius:var(--r-img)}
 .meta{font-size:var(--fs-small);color:var(--pink-ink);font-weight:600}

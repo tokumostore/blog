@@ -3,5 +3,5 @@ layout: default
 ---
 <h1 class="list-title">{{ site.data.categories[page.category_key] }}</h1>
 <div class="list">
-{% for p in site.categories[page.category_key] %}{% include post-item.html post=p big=forloop.first %}{% endfor %}
+{% for p in site.categories[page.category_key] %}{% assign big = false %}{% if forloop.index <= site.big_count %}{% assign big = true %}{% endif %}{% include post-item.html post=p big=big %}{% endfor %}
 </div>

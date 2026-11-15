@@ -9,6 +9,7 @@ group_order_url: https://tokumostore.com/shopinfo/school.html
 logo: /assets/img/logo-h80.png
 permalink: /:categories/:title/
 paginate: 10
+big_count: 3            # 첫 화면(1쪽)·카테고리 목록에서 큰 사진으로 보여 줄 최근 글 수
 paginate_path: /page/:num/
 plugins:
   - jekyll-seo-tag
