@@ -129,3 +129,12 @@ main{padding-top:8px;padding-bottom:40px}
 .st-mo{border-radius:50%;background:var(--logo-yellow);color:var(--ink) !important}
 .foot-line{margin:0;font-size:var(--fs-btn);color:var(--ink)}
 .foot-link{display:inline-block;margin-top:6px;font-size:var(--fs-btn);font-weight:700;color:var(--pink-ink);border-bottom:1.5px dashed var(--pink-ink);line-height:1.5}
+
+/* 작은 칸 상품 카드 (_includes/product-mini.html, 카드 9개 이상인 글, 2026-11-15)
+   폰에서도 한 줄에 3개. 사진 어디를 눌러도 쇼핑몰 상품 페이지로 간다. */
+.mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0 22px}
+.mini{display:block;text-align:center}
+.mini-ph{position:relative;display:block;border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.mini-ph img{width:100%;aspect-ratio:1/1;object-fit:cover;margin:0;border-radius:0}
+.mini-btn{position:absolute;right:6px;bottom:6px;font-size:11px;font-weight:700;line-height:1;background:var(--pink);color:var(--pink-ink);border-radius:999px;padding:5px 8px}
+.mini-name{display:block;margin-top:6px;font-size:var(--fs-btn);line-height:1.4}
