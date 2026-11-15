@@ -124,4 +124,7 @@ main{padding-top:8px;padding-bottom:40px}
 .site-footer{padding:0 0 24px;font-size:var(--fs-small);color:var(--sub);text-align:center}
 .site-footer .wrap{background:var(--lav);border-radius:var(--r-thumb);padding-top:20px;padding-bottom:20px}
 .site-footer p{margin:2px 0}
+.group-order{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:14px;text-align:left}
+.group-order span:first-child{font-size:var(--fs-btn);color:var(--ink);font-weight:600}
+.go-btn{flex:none;font-size:var(--fs-small);font-weight:700;background:var(--blue);color:var(--blue-ink);border-radius:999px;padding:6px 12px}
 
