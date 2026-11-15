@@ -46,16 +46,8 @@
   /* 로고 스티커 색 (톡·꾸·모) */
   --logo-pink:#F28AA5; --logo-blue:#5B7FC0; --logo-yellow:#FFC94A;
 }
-/* 다크 모드 색: 폰이 다크 모드일 때만 쓰인다 */
-@media (prefers-color-scheme:dark){:root{
-  --ink:#ECE9F1; --sub:#A9AEBB; --bg:#1C1D24; --card:#24262F; --line:#30333E;
-  --lav:#3A3550;
-  --pink:#4A3540;   --pink-ink:#F3A5BE;
-  --mint:#2C4339;   --mint-ink:#9FE0C4;
-  --yellow:#4A4430; --yellow-ink:#F3D58A;
-  --blue:#2E3B52;   --blue-ink:#B8CFF0;
-  --peach:#4A3A30;
-}}
+/* 폰 어둠 모드에서도 자동으로 어둡게 바뀌지 않고 항상 밝게 보인다 (2026-11-15 사용자 결정) */
+:root{color-scheme:only light}
 
 /* [2] 기본 ------------------------------------------------ */
 *{box-sizing:border-box}
@@ -74,7 +66,6 @@ img{max-width:100%;height:auto;display:block}
 .site-header{background:var(--bg)}
 .header-row{display:flex;align-items:center;height:62px}
 .logo img{height:36px;width:auto}
-@media (prefers-color-scheme:dark){.logo img{background:#fff;border-radius:10px;padding:3px 8px}}
 .cat-nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;border-bottom:1px solid var(--line);scrollbar-width:none}
 .cat-nav::-webkit-scrollbar{display:none}
 .chip{flex:none;font-size:var(--fs-btn);padding:6px 15px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--sub)}
