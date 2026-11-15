@@ -1,0 +1,19 @@
+title: 토크모스토어 블로그
+description: 작지만 의미 있는 하나. 토크모스토어의 배지·소품 이야기와 새 소식을 전합니다.
+url: https://blog.tokumostore.com
+baseurl: ""
+lang: ko_KR
+timezone: Asia/Seoul
+shop_url: https://tokumostore.com/
+logo: /assets/img/logo-h80.png
+permalink: /:categories/:title/
+paginate: 10
+paginate_path: /page/:num/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+exclude: [README.md]
