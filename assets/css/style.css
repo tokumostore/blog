@@ -62,17 +62,16 @@ img{max-width:100%;height:auto;display:block}
 .wrap{max-width:var(--page-width);margin:0 auto;padding:0 18px}
 
 /* [3] 위: 링크 줄·로고·카테고리 ----------------------------- */
-.topbar{background:var(--lav)}
-.top-links{display:flex;justify-content:flex-end;gap:6px;padding-top:7px;padding-bottom:7px}
+.top-links{display:flex;justify-content:flex-end;gap:6px;padding-top:7px;padding-bottom:7px;background:var(--lav);border-radius:0 0 var(--r-thumb) var(--r-thumb)}
 .tl{font-size:var(--fs-small);font-weight:600;padding:4px 12px;border-radius:999px}
 .tl-1{background:var(--pink);color:var(--pink-ink)}
 .tl-2{background:var(--mint);color:var(--mint-ink)}
 .tl-3{background:var(--yellow);color:var(--yellow-ink)}
-.site-header{background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header{background:var(--bg)}
 .header-row{display:flex;align-items:center;height:62px}
 .logo img{height:36px;width:auto}
 @media (prefers-color-scheme:dark){.logo img{background:#fff;border-radius:10px;padding:3px 8px}}
-.cat-nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}
+.cat-nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;border-bottom:1px solid var(--line);scrollbar-width:none}
 .cat-nav::-webkit-scrollbar{display:none}
 .chip{flex:none;font-size:var(--fs-btn);padding:6px 15px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--sub)}
 .chip.on{background:var(--blue);border-color:var(--blue);color:var(--blue-ink);font-weight:600}
@@ -121,6 +120,7 @@ main{padding-top:8px;padding-bottom:40px}
 .related-title{font-size:var(--fs-item);margin:8px 0 0}
 
 /* [6] 아래 ---------------------------------------------------- */
-.site-footer{background:var(--lav);padding:24px 0 40px;font-size:var(--fs-small);color:var(--sub);text-align:center}
+.site-footer{padding:0 0 24px;font-size:var(--fs-small);color:var(--sub);text-align:center}
+.site-footer .wrap{background:var(--lav);border-radius:var(--r-thumb);padding-top:20px;padding-bottom:20px}
 .site-footer p{margin:2px 0}
 
