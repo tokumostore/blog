@@ -3,7 +3,7 @@ layout: default
 title: 토크모스토어 블로그
 ---
 <div class="list">
-{% for p in paginator.posts %}{% include post-item.html post=p big=forloop.first %}{% endfor %}
+{% for p in paginator.posts %}{% assign big = false %}{% if paginator.page == 1 and forloop.index <= site.big_count %}{% assign big = true %}{% endif %}{% include post-item.html post=p big=big %}{% endfor %}
 </div>
 {% if paginator.total_pages > 1 %}
 <nav class="pager">
