@@ -42,6 +42,9 @@
   --yellow:#FFF0BF; --yellow-ink:#9A6B12;/* 인스타그램 링크·소제목 밑줄 */
   --blue:#D6E6F7;   --blue-ink:#3F5F92;  /* 선택된 카테고리·쇼핑몰 가기 버튼 */
   --peach:#FFE6D6;                       /* 사진 자리·관련 글 위 띠 */
+
+  /* 로고 스티커 색 (톡·꾸·모) */
+  --logo-pink:#F28AA5; --logo-blue:#5B7FC0; --logo-yellow:#FFC94A;
 }
 /* 다크 모드 색: 폰이 다크 모드일 때만 쓰인다 */
 @media (prefers-color-scheme:dark){:root{
@@ -104,8 +107,10 @@ main{padding-top:8px;padding-bottom:40px}
 .body li::marker{color:var(--pink-ink)}
 .body img{border-radius:var(--r-card);margin:22px 0;width:100%}
 .body strong{color:var(--blue-ink)}
-.body blockquote{margin:24px 0;padding:18px 20px;background:var(--pink);color:var(--ink);border-radius:var(--r-card);font-size:var(--fs-quote);font-weight:600;text-align:center}
-.body blockquote p{margin:0}
+.body blockquote{margin:32px 0;padding:0 10px;text-align:center;font-size:var(--fs-quote);font-weight:600;color:var(--ink)}
+.body blockquote::before{content:"\201C";display:block;font-family:Georgia,serif;font-size:48px;line-height:0.6;color:var(--logo-pink);margin-bottom:6px}
+.body blockquote::after{content:"";display:block;width:34px;height:8px;margin:12px auto 0;background:radial-gradient(circle,var(--logo-pink) 3.5px,transparent 4px) 0 0/12px 8px no-repeat,linear-gradient(var(--logo-blue),var(--logo-blue)) 13px 0/8px 8px no-repeat,radial-gradient(circle,var(--logo-yellow) 3.5px,transparent 4px) 22px 0/12px 8px no-repeat}
+.body blockquote p{margin:0;line-height:1.7}
 
 /* 상품 카드 (_includes/product.html) */
 .product{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:10px;margin:16px 0}
@@ -115,16 +120,18 @@ main{padding-top:8px;padding-bottom:40px}
 .p-price{font-size:var(--fs-btn);color:var(--sub)}
 .p-btn{font-size:var(--fs-btn);font-weight:700;background:var(--pink);color:var(--pink-ink);border-radius:12px;padding:10px 16px}
 
-.shop-cta{text-align:center;margin:36px 0 8px}
-.shop-cta a{display:inline-block;background:var(--blue);color:var(--blue-ink);font-weight:700;padding:14px 28px;border-radius:999px}
 .related{margin-top:36px;border-top:10px solid var(--peach);padding-top:12px}
 .related-title{font-size:var(--fs-item);margin:8px 0 0}
 
-/* [6] 아래 ---------------------------------------------------- */
-.site-footer{padding:0 0 24px;font-size:var(--fs-small);color:var(--sub);text-align:center}
-.site-footer .wrap{background:var(--lav);border-radius:var(--r-thumb);padding-top:20px;padding-bottom:20px}
-.site-footer p{margin:2px 0}
-.group-order{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:14px;text-align:left}
-.group-order span:first-child{font-size:var(--fs-btn);color:var(--ink);font-weight:600}
-.go-btn{flex:none;font-size:var(--fs-small);font-weight:700;background:var(--blue);color:var(--blue-ink);border-radius:999px;padding:6px 12px}
-
+/* [6] 아래: 물결 + 톡·꾸·모 스티커 + 단체 주문 ------------------ */
+.site-footer{padding:20px 0 0;text-align:center}
+.site-footer .wrap{padding:0}
+.wave{display:block;width:100%;height:24px;fill:var(--lav)}
+.foot-body{background:var(--lav);padding:6px 18px 30px}
+.stickers{display:flex;justify-content:center;gap:5px;margin:2px 0 10px}
+.stickers span{width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.st-tok{border-radius:50%;background:var(--logo-pink)}
+.st-kku{border-radius:6px;background:var(--logo-blue);transform:rotate(-8deg)}
+.st-mo{border-radius:50%;background:var(--logo-yellow);color:var(--ink) !important}
+.foot-line{margin:0;font-size:var(--fs-btn);color:var(--ink)}
+.foot-link{display:inline-block;margin-top:6px;font-size:var(--fs-btn);font-weight:700;color:var(--pink-ink);border-bottom:1.5px dashed var(--pink-ink);line-height:1.5}
