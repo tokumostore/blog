@@ -10,13 +10,14 @@
   --font:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
 
   /* 글자 크기 */
-  --fs-body:17px;      /* 본문 */
-  --fs-small:13px;     /* 날짜·카테고리·작은 글 */
-  --fs-btn:14px;       /* 버튼·카테고리 칩 */
-  --fs-item:17px;      /* 목록 글 제목 */
-  --fs-item-big:21px;  /* 목록 맨 위 큰 글 제목 */
-  --fs-h1:25px;        /* 글 제목 */
-  --fs-h2:20px;        /* 본문 소제목 */
+  --fs-body:15px;      /* 본문 (네이버 블로그 기본과 같음) */
+  --fs-quote:15px;     /* 인용 상자·표어 */
+  --fs-small:12px;     /* 날짜·카테고리·작은 글 */
+  --fs-btn:13px;       /* 버튼·카테고리 칩 */
+  --fs-item:16px;      /* 목록 글 제목 */
+  --fs-item-big:19px;  /* 목록 맨 위 큰 글 제목 */
+  --fs-h1:24px;        /* 글 제목 */
+  --fs-h2:19px;        /* 본문 소제목 */
   --line-height:1.8;
 
   /* 화면 폭: 컴에서도 폰과 같은 폭으로 보이게 */
@@ -103,7 +104,7 @@ main{padding-top:8px;padding-bottom:40px}
 .body li::marker{color:var(--pink-ink)}
 .body img{border-radius:var(--r-card);margin:22px 0;width:100%}
 .body strong{color:var(--blue-ink)}
-.body blockquote{margin:24px 0;padding:18px 20px;background:var(--pink);color:var(--ink);border-radius:var(--r-card);font-weight:600;text-align:center}
+.body blockquote{margin:24px 0;padding:18px 20px;background:var(--pink);color:var(--ink);border-radius:var(--r-card);font-size:var(--fs-quote);font-weight:600;text-align:center}
 .body blockquote p{margin:0}
 
 /* 상품 카드 (_includes/product.html) */
