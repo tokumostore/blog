@@ -10,7 +10,6 @@ layout: default
   <div class="body">
 {{ content }}
   </div>
-  <p class="shop-cta"><a href="{{ site.shop_url }}">토크모스토어 쇼핑몰 가기</a></p>
 </article>
 {% assign related = site.categories[ck] | where_exp: "p", "p.url != page.url" %}
 {% if related.size > 0 %}
