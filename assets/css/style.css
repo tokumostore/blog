@@ -19,6 +19,9 @@
   --fs-h2:20px;        /* 본문 소제목 */
   --line-height:1.8;
 
+  /* 화면 폭: 컴에서도 폰과 같은 폭으로 보이게 */
+  --page-width:560px;
+
   /* 둥글기 */
   --r-img:20px;        /* 큰 사진 */
   --r-card:18px;       /* 상품 카드·인용 상자 */
@@ -56,7 +59,7 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:var(--fs-body);line-height:var(--line-height);word-break:keep-all;overflow-wrap:break-word}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto;display:block}
-.wrap{max-width:680px;margin:0 auto;padding:0 18px}
+.wrap{max-width:var(--page-width);margin:0 auto;padding:0 18px}
 
 /* [3] 위: 링크 줄·로고·카테고리 ----------------------------- */
 .topbar{background:var(--lav)}
@@ -121,5 +124,3 @@ main{padding-top:8px;padding-bottom:40px}
 .site-footer{background:var(--lav);padding:24px 0 40px;font-size:var(--fs-small);color:var(--sub);text-align:center}
 .site-footer p{margin:2px 0}
 
-/* [7] PC 화면(넓을 때)만 조금 크게 ------------------------------ */
-@media (min-width:720px){:root{--fs-body:18px;--fs-h1:30px}}
