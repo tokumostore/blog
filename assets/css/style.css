@@ -1,62 +1,125 @@
-:root{--ink:#3A4560;--sub:#7C8396;--bg:#FFFAF6;--card:#ffffff;--line:#F1E8E2;--pink:#FBD6E1;--pink-ink:#D86A8C;--blue:#D6E6F7;--blue-ink:#3F5F92;--yellow:#FFF0BF;--mint:#D8F1E6;--peach:#FFE6D6;--lav:#E7E0F7}
-@media (prefers-color-scheme:dark){:root{--ink:#ECE9F1;--sub:#A9AEBB;--bg:#1C1D24;--card:#24262F;--line:#30333E;--pink:#4A3540;--pink-ink:#F3A5BE;--blue:#2E3B52;--blue-ink:#B8CFF0;--yellow:#4A4430;--mint:#2C4339;--peach:#4A3A30;--lav:#3A3550}}
+/* =========================================================
+   토크모스토어 블로그 스타일
+   색·글꼴·크기·둥글기는 맨 위 [1] 설정값만 고치면 전체에 적용된다.
+   [2] 이하는 화면 부분별 모양이므로 보통은 고치지 않는다.
+   ========================================================= */
+
+/* [1] 설정값 ------------------------------------------------ */
+:root{
+  /* 글꼴 */
+  --font:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+
+  /* 글자 크기 */
+  --fs-body:17px;      /* 본문 */
+  --fs-small:13px;     /* 날짜·카테고리·작은 글 */
+  --fs-btn:14px;       /* 버튼·카테고리 칩 */
+  --fs-item:17px;      /* 목록 글 제목 */
+  --fs-item-big:21px;  /* 목록 맨 위 큰 글 제목 */
+  --fs-h1:25px;        /* 글 제목 */
+  --fs-h2:20px;        /* 본문 소제목 */
+  --line-height:1.8;
+
+  /* 둥글기 */
+  --r-img:20px;        /* 큰 사진 */
+  --r-card:18px;       /* 상품 카드·인용 상자 */
+  --r-thumb:16px;      /* 목록 작은 사진 */
+
+  /* 기본 색 */
+  --ink:#3A4560;       /* 글자 */
+  --sub:#7C8396;       /* 흐린 글자 */
+  --bg:#FFFAF6;        /* 바탕 */
+  --card:#FFFFFF;      /* 카드 바탕 */
+  --line:#F1E8E2;      /* 구분선 */
+
+  /* 파스텔 색 (바탕색 / 그 위 글자색) */
+  --lav:#E7E0F7;                         /* 맨 위·맨 아래 띠 */
+  --pink:#FBD6E1;   --pink-ink:#D86A8C;  /* 쇼핑몰 링크·구매 버튼·인용 상자·카테고리 글씨 */
+  --mint:#D8F1E6;   --mint-ink:#2F7A5C;  /* 스마트스토어 링크 */
+  --yellow:#FFF0BF; --yellow-ink:#9A6B12;/* 인스타그램 링크·소제목 밑줄 */
+  --blue:#D6E6F7;   --blue-ink:#3F5F92;  /* 선택된 카테고리·쇼핑몰 가기 버튼 */
+  --peach:#FFE6D6;                       /* 사진 자리·관련 글 위 띠 */
+}
+/* 다크 모드 색: 폰이 다크 모드일 때만 쓰인다 */
+@media (prefers-color-scheme:dark){:root{
+  --ink:#ECE9F1; --sub:#A9AEBB; --bg:#1C1D24; --card:#24262F; --line:#30333E;
+  --lav:#3A3550;
+  --pink:#4A3540;   --pink-ink:#F3A5BE;
+  --mint:#2C4339;   --mint-ink:#9FE0C4;
+  --yellow:#4A4430; --yellow-ink:#F3D58A;
+  --blue:#2E3B52;   --blue-ink:#B8CFF0;
+  --peach:#4A3A30;
+}}
+
+/* [2] 기본 ------------------------------------------------ */
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:var(--fs-body);line-height:var(--line-height);word-break:keep-all;overflow-wrap:break-word}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto;display:block}
 .wrap{max-width:680px;margin:0 auto;padding:0 18px}
+
+/* [3] 위: 링크 줄·로고·카테고리 ----------------------------- */
 .topbar{background:var(--lav)}
 .top-links{display:flex;justify-content:flex-end;gap:6px;padding-top:7px;padding-bottom:7px}
-.tl{font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;color:var(--blue-ink);background:var(--card)}
+.tl{font-size:var(--fs-small);font-weight:600;padding:4px 12px;border-radius:999px}
 .tl-1{background:var(--pink);color:var(--pink-ink)}
-.tl-2{background:var(--mint);color:#2F7A5C}
-.tl-3{background:var(--yellow);color:#9A6B12}
-@media (prefers-color-scheme:dark){.tl-2{color:#9FE0C4}.tl-3{color:#F3D58A}}
+.tl-2{background:var(--mint);color:var(--mint-ink)}
+.tl-3{background:var(--yellow);color:var(--yellow-ink)}
 .site-header{background:var(--bg);border-bottom:1px solid var(--line)}
 .header-row{display:flex;align-items:center;height:62px}
 .logo img{height:36px;width:auto}
 @media (prefers-color-scheme:dark){.logo img{background:#fff;border-radius:10px;padding:3px 8px}}
 .cat-nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}
 .cat-nav::-webkit-scrollbar{display:none}
-.chip{flex:none;font-size:14px;padding:6px 15px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--sub)}
+.chip{flex:none;font-size:var(--fs-btn);padding:6px 15px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--sub)}
 .chip.on{background:var(--blue);border-color:var(--blue);color:var(--blue-ink);font-weight:600}
+
+/* [4] 가운데: 글 목록 ---------------------------------------- */
 main{padding-top:8px;padding-bottom:40px}
 .list-title{font-size:22px;margin:18px 0 4px}
 .item{border-bottom:1px solid var(--line)}
 .item a{display:flex;gap:14px;padding:16px 0;align-items:center}
-.item .thumb{width:84px;height:84px;object-fit:cover;border-radius:16px;flex:none;background:var(--peach)}
+.item .thumb{width:84px;height:84px;object-fit:cover;border-radius:var(--r-thumb);flex:none;background:var(--peach)}
 .item.big a{display:block}
-.item.big .thumb{width:100%;height:auto;aspect-ratio:16/10;margin-bottom:12px;border-radius:20px}
-.meta{font-size:13px;color:var(--pink-ink);font-weight:600}
-.item-title{font-size:17px;line-height:1.45;margin:2px 0 0;font-weight:700}
-.item.big .item-title{font-size:21px}
+.item.big .thumb{width:100%;height:auto;aspect-ratio:16/10;margin-bottom:12px;border-radius:var(--r-img)}
+.meta{font-size:var(--fs-small);color:var(--pink-ink);font-weight:600}
+.item-title{font-size:var(--fs-item);line-height:1.45;margin:2px 0 0;font-weight:700}
+.item.big .item-title{font-size:var(--fs-item-big)}
 .item-desc{font-size:15px;color:var(--sub);margin:4px 0 0;line-height:1.6}
 .pager{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:15px;color:var(--sub)}
 .pager a{color:var(--blue-ink);font-weight:600;background:var(--blue);padding:6px 14px;border-radius:999px}
-.crumb{font-size:13px;color:var(--sub);margin-top:16px}
-.post-title{font-size:25px;line-height:1.4;margin:8px 0 4px;letter-spacing:-0.01em}
-.post-meta{font-size:13px;color:var(--sub)}
-.hero{border-radius:20px;margin:18px 0 6px;width:100%}
-.body h2{font-size:20px;margin:36px 0 10px;line-height:1.45;display:inline-block;background:linear-gradient(transparent 58%,var(--yellow) 58%);padding:0 4px}
+
+/* [5] 가운데: 글 화면 ---------------------------------------- */
+.crumb{font-size:var(--fs-small);color:var(--sub);margin-top:16px}
+.post-title{font-size:var(--fs-h1);line-height:1.4;margin:8px 0 4px;letter-spacing:-0.01em}
+.post-meta{font-size:var(--fs-small);color:var(--sub)}
+.hero{border-radius:var(--r-img);margin:18px 0 6px;width:100%}
+.body h2{font-size:var(--fs-h2);margin:36px 0 10px;line-height:1.45;display:inline-block;background:linear-gradient(transparent 58%,var(--yellow) 58%);padding:0 4px}
 .body p{margin:0 0 18px}
 .body ul{padding-left:20px;margin:0 0 18px}
 .body li{margin:4px 0}
 .body li::marker{color:var(--pink-ink)}
-.body img{border-radius:18px;margin:22px 0;width:100%}
+.body img{border-radius:var(--r-card);margin:22px 0;width:100%}
 .body strong{color:var(--blue-ink)}
-.body blockquote{margin:24px 0;padding:18px 20px;background:var(--pink);color:var(--ink);border-radius:18px;font-weight:600;text-align:center}
+.body blockquote{margin:24px 0;padding:18px 20px;background:var(--pink);color:var(--ink);border-radius:var(--r-card);font-weight:600;text-align:center}
 .body blockquote p{margin:0}
-.product{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;margin:16px 0}
+
+/* 상품 카드 (_includes/product.html) */
+.product{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:10px;margin:16px 0}
 .product img{width:64px;height:64px;object-fit:cover;border-radius:12px;margin:0}
 .p-info{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.4}
 .p-name{font-size:15px;font-weight:600}
-.p-price{font-size:14px;color:var(--sub)}
-.p-btn{font-size:14px;font-weight:700;background:var(--pink);color:var(--pink-ink);border-radius:12px;padding:10px 16px}
+.p-price{font-size:var(--fs-btn);color:var(--sub)}
+.p-btn{font-size:var(--fs-btn);font-weight:700;background:var(--pink);color:var(--pink-ink);border-radius:12px;padding:10px 16px}
+
 .shop-cta{text-align:center;margin:36px 0 8px}
 .shop-cta a{display:inline-block;background:var(--blue);color:var(--blue-ink);font-weight:700;padding:14px 28px;border-radius:999px}
 .related{margin-top:36px;border-top:10px solid var(--peach);padding-top:12px}
-.related-title{font-size:17px;margin:8px 0 0}
-.site-footer{background:var(--lav);padding:24px 0 40px;font-size:13px;color:var(--sub);text-align:center}
+.related-title{font-size:var(--fs-item);margin:8px 0 0}
+
+/* [6] 아래 ---------------------------------------------------- */
+.site-footer{background:var(--lav);padding:24px 0 40px;font-size:var(--fs-small);color:var(--sub);text-align:center}
 .site-footer p{margin:2px 0}
-@media (min-width:720px){body{font-size:18px}.post-title{font-size:30px}}
+
+/* [7] PC 화면(넓을 때)만 조금 크게 ------------------------------ */
+@media (min-width:720px){:root{--fs-body:18px;--fs-h1:30px}}
