@@ -17,9 +17,9 @@
   </div>
   <nav class="wrap cat-nav" aria-label="카테고리">
     <a href="{{ '/' | relative_url }}" class="chip{% if page.url == '/' or page.url contains '/page/' %} on{% endif %}">전체</a>
-    {% for c in site.data.categories %}{% if site.categories[c[0]] %}
-    <a href="{{ '/' | append: c[0] | append: '/' | relative_url }}" class="chip{% if page.category_key == c[0] or page.categories contains c[0] %} on{% endif %}">{{ c[1] }}</a>
-    {% endif %}{% endfor %}
+    {% for cat in site.categories %}{% assign key = cat[0] %}
+    <a href="{{ '/' | append: key | append: '/' | relative_url }}" class="chip{% if page.category_key == key or page.categories contains key %} on{% endif %}">{{ site.data.categories[key] | default: key }}</a>
+    {% endfor %}
   </nav>
 </header>
 <main class="wrap">
