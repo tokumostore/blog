@@ -21,7 +21,7 @@ exclude: [README.md, CLAUDE.md]
 links:
   - name: 쇼핑몰
     url: https://www.tokumostore.com/
-  - name: 스마트스토어
+  - name: 네이버
     url: https://smartstore.naver.com/tokumo
   - name: 인스타그램
     url: https://www.instagram.com/tokumostore/
