@@ -4,7 +4,7 @@ url: https://blog.tokumostore.com
 baseurl: ""
 lang: ko_KR
 timezone: Asia/Seoul
-shop_url: https://tokumostore.com/
+shop_url: https://www.tokumostore.com/
 logo: /assets/img/logo-h80.png
 permalink: /:categories/:title/
 paginate: 10
@@ -17,3 +17,10 @@ defaults:
   - scope: { path: "", type: posts }
     values: { layout: post }
 exclude: [README.md]
+links:
+  - name: 쇼핑몰
+    url: https://www.tokumostore.com/
+  - name: 스마트스토어
+    url: https://smartstore.naver.com/tokumo
+  - name: 인스타그램
+    url: https://www.instagram.com/tokumostore/
