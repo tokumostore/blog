@@ -1,7 +1,7 @@
 ---
 date: 2026-11-19 02:42:00 +0900
 title: 성경책 펼칠 때마다 보이는 작은 십자가
-categories: faith
+categories: church
 description: 읽던 자리에 끼워 두는 골드·로즈골드 십자가 클립과, 작은 마음을 전할 때 좋은 십자가 배지 두 가지를 소개해요.
 image: /assets/img/2026-11-19-bible-cross-main.jpg
 image_alt: 연한 하늘색 바탕에 펼친 책과 리본, 안개꽃 옆에 골드·로즈골드 십자가 클립과 파도 십자가 배지, 금색 미니 십자가 배지를 놓은 대표 사진
