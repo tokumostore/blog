@@ -12,9 +12,12 @@ layout: default
   </div>
 </article>
 {% assign related = site.categories[ck] | where_exp: "p", "p.url != page.url" %}
-{% if related.size > 0 %}
+{% assign more = site.posts.size | minus: 1 %}
+{% if more > 0 %}
 <section class="related">
-  <h2 class="related-title">{{ site.data.categories[ck] | default: ck }} 글 더 보기</h2>
-  {% for p in related limit:3 %}{% include post-item.html post=p %}{% endfor %}
+  <h2 class="related-title">{% if related.size >= 3 %}{{ site.data.categories[ck] | default: ck }} 글 더 보기{% else %}다른 글 더 보기{% endif %}</h2>
+  {% assign shown = 0 %}
+  {% for p in related limit:3 %}{% include post-item.html post=p %}{% assign shown = shown | plus: 1 %}{% endfor %}
+  {% for p in site.posts %}{% if shown >= 3 %}{% break %}{% endif %}{% assign pk = p.categories | first %}{% if p.url != page.url and pk != ck %}{% include post-item.html post=p %}{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}
 </section>
 {% endif %}
