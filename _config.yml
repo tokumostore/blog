@@ -1,5 +1,6 @@
 title: 토크모스토어 블로그
 description: 작지만 의미 있는 하나. 토크모스토어의 배지·소품 이야기와 새 소식을 전합니다.
+tagline: 배지·소품 이야기
 url: https://blog.tokumostore.com
 baseurl: ""
 lang: ko_KR
@@ -16,6 +17,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 defaults:
+  - scope: { path: "", type: pages }
+    values: { image: /assets/img/og-default.jpg }
   - scope: { path: "", type: posts }
     values: { layout: post }
 exclude: [README.md, CLAUDE.md]
@@ -26,3 +29,5 @@ links:
     url: https://smartstore.naver.com/tokumo
   - name: 인스타그램
     url: https://www.instagram.com/tokumostore/
+twitter:
+  card: summary_large_image
